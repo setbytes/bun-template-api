@@ -1,0 +1,6 @@
+{
+  "*.{js,mjs,ts}": [
+    "bun run lint:fix",
+    "bun run test:staged"
+  ]
+}

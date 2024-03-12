@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+     "emitDecoratorMetadata": true,
+     "experimentalDecorators": true,
+     "esModuleInterop": true,
+     "rootDirs": ["src", "tests"],
+     "baseUrl": "src",
+     "paths": {
+       "@/tests/*": ["../tests/*"],
+       "@/*": ["*"]
+     },
+     "plugins": [
+      { "transform": "typescript-transform-paths" },
+      { "transform": "typescript-transform-paths", "afterDeclarations": true }
+    ],
+    "types": ["bun-types", "jest"]
+  },
+  "include": ["src", "tests"]
+}

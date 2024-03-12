@@ -1,0 +1,10 @@
+node_modules
+.DS_Store
+dist
+coverage
+.idea
+package-lock.json
+mysql-prod-data
+mysql-dev-data
+src/presentation/public/*
+src/presentation/certificates/*

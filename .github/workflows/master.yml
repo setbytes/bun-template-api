@@ -1,0 +1,38 @@
+name: Deploy CI/CD
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: '1.0.3'
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run tests
+        run: bun run test:ci
+
+      - name: Deploy using ssh
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.MASTER_VPS_HOST }}
+          username: ${{ secrets.MASTER_VPS_USERNAME }}
+          key: ${{ secrets.MASTER_VPS_SSH_KEY }}
+          port: 22
+          script: |
+            cd /var/apis/template-api-dev
+            git pull origin master
+            ~/.bun/bin/bun install
+            npm run restart:pm2:dev

@@ -1,0 +1,8 @@
+node_modules
+.DS_Store
+dist
+coverage
+.idea
+package-lock.json
+src/presentation/public/*
+src/presentation/certificates/*

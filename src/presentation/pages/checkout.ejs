@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title><%= title %></title>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white p-8 rounded-lg shadow-md w-96">
+
+    <% if (status == "APPROVED") { %>
+      <h1 class="text-2xl font-bold text-green-600 mb-4">Payment Successful</h1>
+      <p class="text-gray-600">Thank you for your payment. Your transaction was successful.</p>
+    <% } else { %>
+      <h1 class="text-2xl font-bold text-red-600 mb-4">Payment Failed</h1>
+      <p class="text-gray-600">Sorry, something went wrong with your payment. Please try again later.</p>
+    <% } %>
+
+    <div class="mt-8">
+      <a href="<%= website %>" class="text-blue-500 hover:underline">Back to Home</a>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
+
