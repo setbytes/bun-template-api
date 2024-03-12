@@ -1,5 +1,5 @@
 {
-  "name": "intopays-api",
+  "name": "template-api",
   "version": "0.0.1",
   "author": {
     "name": "Lucas Lopes",
@@ -8,10 +8,10 @@
   "scripts": {
     "start": "bun run --watch ./src/app/index.ts",
     "start:prod": "NODE_ENV=production bun run --watch ./src/app/index.ts",
-    "start:pm2:dev": "pm2 start npm --name \"intopays-api-dev\" -- run start",
-    "restart:pm2:dev": "pm2 restart intopays-api-dev",
-    "start:pm2:prod": "pm2 start npm --name \"intopays-api-prod\" -- run start",
-    "restart:pm2:prod": "pm2 restart intopays-api-prod",
+    "start:pm2:dev": "pm2 start npm --name \"template-api-dev\" -- run start",
+    "restart:pm2:dev": "pm2 restart template-api-dev",
+    "start:pm2:prod": "pm2 start npm --name \"template-api-prod\" -- run start",
+    "restart:pm2:prod": "pm2 restart template-api-prod",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
     "test:unit": "npm test -- --watch",
@@ -19,7 +19,7 @@
     "test:ci": "npm test -- --coverage",
     "lint": "bunx eslint --ext .js,.ts .",
     "lint:fix": "bun run lint -- --fix",
-    "install:mysql": "docker-compose up -d",
+    "install:mysql": "docker-compose up -d mysql-dev && docker-compose up -d mysql-prod",
     "prepare": "husky install"
   },
   "dependencies": {
