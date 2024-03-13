@@ -10,7 +10,7 @@
     "start:prod": "NODE_ENV=production bun run --watch ./src/app/index.ts",
     "start:pm2:dev": "pm2 start npm --name \"template-api-dev\" -- run start",
     "restart:pm2:dev": "pm2 restart template-api-dev",
-    "start:pm2:prod": "pm2 start npm --name \"template-api-prod\" -- run start",
+    "start:pm2:prod": "pm2 start npm --name \"template-api-prod\" -- run start:prod",
     "restart:pm2:prod": "pm2 restart template-api-prod",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
